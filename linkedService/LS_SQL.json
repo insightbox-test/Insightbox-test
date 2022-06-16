@@ -1,0 +1,12 @@
+{
+	"name": "LS_SQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=insightbox-test.database.windows.net;initial catalog=harisqldb;user id=insightbox-test",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDE3NzRDRjZCLTJGRDMtNDczMS1CMUZDLUFDNDA2RTc3M0REMF9jNjQwOWMzZi0zY2NjLTQ0ZGUtOTQ3MS01OTk5ZTJlYWNkNmMiDQp9"
+		}
+	}
+}

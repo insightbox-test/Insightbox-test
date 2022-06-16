@@ -1,0 +1,9 @@
+{
+	"name": "Hari-Dev-Adf",
+	"location": "EastUS",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f5fe99c8-e7a2-40e7-9b4d-20f3b36914b9",
+		"tenantId": "eb602ec9-db67-4613-99de-3f4e027efc87"
+	}
+}

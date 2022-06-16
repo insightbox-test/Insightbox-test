@@ -1,0 +1,20 @@
+{
+	"name": "Inputdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Emp.json",
+				"folderPath": "Input",
+				"container": "test-container"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
