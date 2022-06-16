@@ -1,0 +1,22 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Banking",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "BFSI (1).xlsx",
+				"folderPath": "BFSI",
+				"fileSystem": "insightbox-test"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
