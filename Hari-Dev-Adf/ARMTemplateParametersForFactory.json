@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Hari-Dev-Adf"
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"LS_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_BLOB_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_connectionString": {
+			"value": ""
+		},
+		"LS_ADLS_properties_typeProperties_url": {
+			"value": "https://haridevgen2.dfs.core.windows.net/"
+		},
+		"LS_BLOB_properties_typeProperties_url": {
+			"value": "https://haridevsg.dfs.core.windows.net"
+		}
+	}
+}
