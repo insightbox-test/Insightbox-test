@@ -1,0 +1,118 @@
+{
+	"name": "PL_BFSI",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.sheetnames",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "ExcelSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"wildcardFolderPath": "BFSI",
+										"wildcardFileName": "*.xlsx",
+										"enablePartitionDiscovery": false
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_SRC_ADLS_SQL_BFSI",
+									"type": "DatasetReference",
+									"parameters": {
+										"sheetname": {
+											"value": "@item().sheetnames",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_SINK_ADLS_SQL_BFSI",
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": {
+											"value": "@item().sheetnames",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"sheetnames": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"sheetnames": "BFSI"
+					},
+					{
+						"sheetnames": "Data"
+					},
+					{
+						"sheetnames": "Banking"
+					},
+					{
+						"sheetnames": "Finance income Statement"
+					},
+					{
+						"sheetnames": "Finance balance statement"
+					},
+					{
+						"sheetnames": "Finance ratios"
+					},
+					{
+						"sheetnames": "Insurance"
+					}
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-06-09T09:26:51Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
