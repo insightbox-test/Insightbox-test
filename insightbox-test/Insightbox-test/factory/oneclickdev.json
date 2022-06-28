@@ -1,0 +1,9 @@
+{
+	"name": "oneclickdev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6c49b444-5180-4806-ae8f-749d63524dfb",
+		"tenantId": "eb602ec9-db67-4613-99de-3f4e027efc87"
+	}
+}
